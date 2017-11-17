@@ -21,18 +21,10 @@ SET time_zone = "+00:00";
 --
 -- Database: `cs340_barryj`
 --
-
-DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`cs340_barryj`@`%` PROCEDURE `updateCollegeStats` (IN `pName` CHAR)  BEGIN
-	UPDATE `CollegeStats`
-	SET appCount = (SELECT COUNT(*) FROM `Apply` WHERE cName = pName)
-	WHERE cName = pName;
-END$$
-
-DELIMITER ;
+CREATE DEFINER=`cs340_fernanen`@`%`
 
 -- --------------------------------------------------------
 
@@ -43,7 +35,15 @@ DELIMITER ;
 CREATE TABLE `Consoles` (
   `console` varchar(20) NOT NULL,
   `gameID` int(11) NOT NULL,
-  `releaseDate` date NOT NULL
+  `releaseDate` date NOT NULL+
+
+
+
+
+
+
+
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

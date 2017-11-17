@@ -23,7 +23,7 @@
 	$UserName = mysqli_real_escape_string($connected, $_POST['UserName']);
 	$FirstName = mysqli_real_escape_string($connected, $_POST['FirstName']);
 	$LastName = mysqli_real_escape_string($connected, $_POST['LastName']);
-	$EmailAddress = mysqli_real_escape_string($connected, $_POST['EmailAddress']);
+	$bio = mysqli_real_escape_string($connected, $_POST['bio']);
 	$PasswordInput = mysqli_real_escape_string($connected, $_POST['Password']);
 	$Age = mysqli_real_escape_string($connected,$_POST['Age']);
 	$Password = Password_hash($PasswordInput,PASSWORD_DEFAULT);
@@ -39,7 +39,7 @@
 	{
 
 		//attempt insert query
-		$query = "INSERT INTO Users (UserName,FirstName,LastName,EmailAddress,Password,Age,Salt) VALUES ('$UserName','$FirstName','$LastName','$EmailAddress','$Password','$Age','')";
+		$query = "INSERT INTO Users (username,password,firstName,lastName,age,bio) VALUES ('$UserName','$Password','$FirstName','$LastName','$Age','$bio')";
 		//check if query was successful 
         if(mysqli_query($connected, $query))
 		{
@@ -59,6 +59,5 @@
 	// close connection 
 	mysqli_close($connected);
 ?>
-
 </body>
 </html>

@@ -29,30 +29,26 @@
 		</p> 
 		<?php?>
         <p>
-                <label for="FirstName">First Name:</label>
-                <input type="text" name="FirstName" id = "FirstName" placeHolder = "First Name" required>
+            <label for="FirstName">First Name:</label>
+            <input type="text" name="FirstName" id = "FirstName" placeHolder = "First Name" required>
         </p>
         <p>
-                <label for="LastName">Last Name:</label>
-                <input type="text" name="LastName" id = "Lastname" placeHolder = "Last Name" required>
+            <label for="LastName">Last Name:</label>
+            <input type="text" name="LastName" id = "Lastname" placeHolder = "Last Name" required>
         </p>
         <p>
-                <label for="EmailAddress">E-mail Address:</label>
-                <input type="email" name="EmailAddress" id = "EmailAddress" placeHolder = "Enter Valid Email Adress" required>
-        </p>
-        <p>
-                <label for="Password">Password:</label>
-                <input type="text" name="Password" id = "Password" placeHolder = "Password" required>
+            <label for="Password">Password:</label>
+            <input type="text" name="Password" id = "Password" placeHolder = "Password" required>
         </p>
 		<p>
 			<label for="Age">Age:<label> 
 			<input type="text" name = "Age" id = "Age" placeHolder = "Age">
 		</p>
+		<p> 
+			<label for="Age">bio:<label> 
+			<input type="text" name = "bio" id = "bio" placeHolder = "bio">
+		</p>
 	<input type = "submit" value = "submit">
 </form> 
 </body>
 </html> 
-
-
-
-	

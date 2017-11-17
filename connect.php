@@ -6,11 +6,23 @@
 	</head> 
 <body> 
 <?php
-	// Get login Credentials Using this file 
+	// create session
+	session_start();
+	if(!$_SESSION["userName"])
+		$_SESSION["userName"]='';
+	if(!$_SESSION["firstName"])
+		$_SESSION["firstName"]='';
+	if(!$_SESSION["lastName"])
+		$_SESSION["lastName"]='';
+	if(!$_SESSION["age"])
+		$_SESSION["age"]=0;
+	if(!$_SESSION["bio"])
+		$_SESSION["bio"]='';
+
 	include 'connectCredentials.php';
 	function incorrectLogin()
 	{
-		echo "incorrecct Login or password";
+		echo "incorrect Login or password";
 		echo "<br>";
 		echo "<a href=./login.php>Retry	</a>";
 		echo "<br>";
@@ -29,7 +41,7 @@
 
 	if(!empty($UserName) && !empty($Password))
 	{
-		$queryTodo = "SELECT * FROM Users WHERE UserName = '$UserName'";
+		$queryTodo = "SELECT * FROM Users WHERE username = '$UserName'";
 		$query = mysqli_query($connected,$queryTodo);
 		if(!$query)
 		{
@@ -43,6 +55,11 @@
 		{
 			if(password_verify($Password,$row[4]))
 			{
+				$_SESSION["userName"]= $row[0]; 
+				$_SESSION["firstName"]= $row[2];
+				$_SESSION["lastName"]= $row[3];
+				$_SESSION["age"]= $row[4]; 
+				$_SESSION["bio"]= $row[5]; 
 				echo "successfully logged in!";
 				echo "<br>";
 			}
