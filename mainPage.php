@@ -18,22 +18,12 @@
 				<i class="fa fa-caret-down"></i>
 			</button>
 			<div class = "dropdown-content">
-				<a>My Profile</a>
+				<a href = ./myAccount.php>My Profile</a>
 				<a>My Reviews</a>
-				<a>Link3</a>
-				<a>Link4</a>
 			</div>
 		</div>
-		<a> Account </a> 
 		<a> About </a> 
 	</div>
 	<!----> 
-	<!-- this is the second navigation bar -->
-	<ul>
-		<li> <a class = "active" href = ./newUserForm.php> Sign Up </a></li>
-		<li> <a href = ./login.php> Login </a></li>
-		<li> <a href = ./listUsers.php> List Users </a> </li> 
-	</ul>
-	<!---->
 </body>
 </html> 

@@ -3,22 +3,11 @@
 <html> 
 	<head>
 		<title>connecting</title>
+		<link rel="stylesheet" type="text/css" href="myStyle.css">
 	</head> 
 <body> 
 <?php
-	// create session
-	session_start();
-	if(!$_SESSION["userName"])
-		$_SESSION["userName"]='';
-	if(!$_SESSION["firstName"])
-		$_SESSION["firstName"]='';
-	if(!$_SESSION["lastName"])
-		$_SESSION["lastName"]='';
-	if(!$_SESSION["age"])
-		$_SESSION["age"]=0;
-	if(!$_SESSION["bio"])
-		$_SESSION["bio"]='';
-
+session_start();
 	include 'connectCredentials.php';
 	function incorrectLogin()
 	{
@@ -53,14 +42,26 @@
 
 		if(!empty($row))
 		{
-			if(password_verify($Password,$row[4]))
+			if(password_verify($Password,$row[1]))
 			{
+				if(!$_SESSION["userName"])
+					$_SESSION["userName"]='';
+				if(!$_SESSION["firstName"])
+					$_SESSION["firstName"]='';
+				if(!$_SESSION["lastName"])
+					$_SESSION["lastName"]='';
+				if(!$_SESSION["age"])
+					$_SESSION["age"]=0;
+				if(!$_SESSION["bio"])
+					$_SESSION["bio"]='';
+
 				$_SESSION["userName"]= $row[0]; 
 				$_SESSION["firstName"]= $row[2];
 				$_SESSION["lastName"]= $row[3];
 				$_SESSION["age"]= $row[4]; 
 				$_SESSION["bio"]= $row[5]; 
 				echo "successfully logged in!";
+				print_r($_SESSION);
 				echo "<br>";
 			}
 			else
@@ -78,3 +79,20 @@
 		echo "missing Credendtials inputed"; 
 	}
 ?>
+	<div class = "navbar"> 
+		<a> Home </a>
+		<a> Games </a>
+		<a> User Critics</a>
+		<div class = "dropdown">
+			<button class = "dropbtn">Account
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class = "dropdown-content">
+				<a href = ./myAccount.php>My Profile</a>
+				<a>My Reviews</a>
+			</div>
+		</div>
+		<a> About </a> 
+	</div>
+	</body>
+	</html>

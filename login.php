@@ -10,7 +10,7 @@
 	<h2 class = "Login">Login</h1>
 		<form name = "login" class = "Login" method = "post" action = "connect.php">
 			<p>
-				<label for="UserName">Username:</label>
+				<label for="UserName" >Username:</label>
 				<input type="text" name="UserName" id = "UserName">
 			</p> 
 			<p>
