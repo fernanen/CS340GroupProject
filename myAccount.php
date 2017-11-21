@@ -30,7 +30,7 @@ session_start();
 		echo "<h2>Age:".$_SESSION["age"]."</h2>";
 		echo "<h2>Bio:".$_SESSION["bio"]."</h2>";
 		// print_r($_SESSION);
-		echo "<a> Update personal information </a>";
+		// echo "<a> Update personal information </a>";
 ?>
 </body> 
 </html> 
