@@ -23,18 +23,12 @@
 	}
 
 	//Escape user Input for Security
-	//$UserName = mysqli_real_escape_string($connected, $_POST['UserName']);
     $bio = mysqli_real_escape_string($connected, $_POST['bio']);
 
-
-    echo "userName".$_SESSION["userName"];
-
 	//attempt update query
-    print_r($_SESSION);
 	$uname = $_SESSION["userName"];
 	$query = "UPDATE Users SET bio = '$bio' WHERE username = '$uname'";
 
-	//$query = "UPDATE Users SET bio = '$bio' WHERE username = '$UserName'";
 	//check if query was successful
     if(mysqli_query($connected, $query))
 	{
