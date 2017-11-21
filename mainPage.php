@@ -18,7 +18,7 @@
 			<div class = "dropdown-content">
 				<a href = ./myAccount.php>My Profile</a>
 				<a href = ./myReviews.php>My Reviews</a>
-				<a href = ./updateBioPage.php> my Bio </a>
+				<a href = ./updateBioPage.php>Update Bio </a>
 			</div>
 		</div>
 		<a href = ./about.php> About </a> 
