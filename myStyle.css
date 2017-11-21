@@ -1,3 +1,31 @@
+body {
+	margin: 0px;
+	background: #d8c591;
+}
+
+h2.main {
+	font-family: Arial;
+	color: white;
+	font-size: 36px;
+	background: #43474f;
+	height: 72px;
+	line-height: 72px;
+	padding-left: 14px;
+	margin: 0px;
+}
+
+div.mainwrapper {
+	background: #d8c591;
+	height: 100%
+}
+
+.gamewrapper{
+	background: #f9e6b1;
+	height: 220px;
+	width: 400px;
+	margin: 20px;
+	list-style-type: none;
+}
 
 h2.Login,h1 {
     text-align: center;

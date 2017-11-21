@@ -5,9 +5,8 @@
 		<title>Register</title>
 		<link rel="stylesheet" type="text/css" href="myStyle.css">
 	</head> 
-<body> 
-	<h2> WELCOME TO OUR HOME PAGE </h2>
-	<p> This is going to be our main page for the project. as of now we have registration, login, and list users available </p>
+<body>
+	<h2 class = "main">Game Review Website</h2>
 	<!-- this is the first navigation bar -->
 	<div class = "navbar"> 
 		<a href = ./mainPage.php > Home </a>
@@ -22,6 +21,16 @@
 			</div>
 		</div>
 		<a href = ./about.php> About </a> 
+	</div>
+	
+	<div class="mainwrapper">
+	
+	<div class="gamelistwrapper">
+		<li class = "gamewrapper">game here</li>
+		<li class = "gamewrapper">game 2 here</li>
+	</ul>
+	
+	
 	</div>
 	<!----> 
 	<?php 
