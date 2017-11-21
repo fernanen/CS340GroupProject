@@ -2,7 +2,7 @@
 <!--Insert Into HW1 Users Table CS 340--> 
 <html> 
 	<head>
-		<title>Register</title>
+		<title>Game Review Website</title>
 		<link rel="stylesheet" type="text/css" href="myStyle.css">
 	</head> 
 <body>
@@ -17,7 +17,7 @@
 			<div class = "dropdown-content">
 				<a href = ./myAccount.php>My Profile</a>
 				<a href = ./myReviews.php>My Reviews</a>
-				<a href = ./updateBioPage.php>Update Bio </a>
+				<a href = ./updateBioPage.php> My Bio </a>
 			</div>
 		</div>
 		<a href = ./about.php> About </a> 
@@ -25,16 +25,37 @@
 	
 	<div class="mainwrapper">
 	
-	<div class="gamelistwrapper">
-		<li class = "gamewrapper">game here</li>
-		<li class = "gamewrapper">game 2 here</li>
-	</ul>
+	<?php
+		include 'connectCredentials.php';
+
+		$connected = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+		if (!$connected) {
+				die('Could not connect: ' . mysql_error());
+		}
+		//Retrieve table
+		$query = "SELECT * FROM Games ORDER BY gameID";
+		//	$query = "SELECT gameID, gameName, esrb, imageURL, console, genre FROM Games NATURAL JOIN Consoles NATURAL JOIN Genre ORDER BY gameID";
+
+
+		$result = mysqli_query($connected,$query);
+		if(!$result)
+		{
+			die("Query to show fields from table failed");
+		}
+	
+		echo "<div class = \"gamelistwrapper\">";
+		
+		while($row = mysqli_fetch_row($result))
+		{
+			echo "<li class = \"gamewrapper\"><img class = \"boxart\" src = \"$row[6]\"><br>$row[1]</li>";
+		}
+		
+		echo "</div>";
+	
+	?>
 	
 	
 	</div>
 	<!----> 
-	<?php 
-		
-	?>
 </body>
 </html> 
