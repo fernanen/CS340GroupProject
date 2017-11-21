@@ -1,14 +1,7 @@
 <?php
     session_start();
  ?>
-<!DOCTYPE html>
-<!--Update user's bio-->
-<html>
-	<head>
-		<title>Register</title>
-	</head>
-<body>
-<a href = ./mainPage.php> Home </a>
+<?php include("./header.php");?>
 <?php
 	// Get login Credentials Using this file
 	include 'connectCredentials.php';

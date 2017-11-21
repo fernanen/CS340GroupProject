@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<!-- Show Game -->
-<html>
-	<head>
-		<title>Show Game</title>
-		<link rel="stylesheet" href="style.css">
-	</head>
+<?php
+session_start();
+?>
+<?php include("./header.php");?>
 <body>
 <?php
 

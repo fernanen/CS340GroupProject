@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<!-- Get new User Info-->
-<html> 
-	<head>
-		<title>Register</title>
-					<link rel="stylesheet" type="text/css" href="myStyle.css">
-	</head> 
+<?php
+session_start();
+?>
+<?php include("./header.php");?>
+
 <?php
 	function validateUsername()
 	{
@@ -19,9 +17,6 @@
 	}
 	?>
 </script>
-<body class = "Login">
-<a href = ./mainPage.php> home</a> 
-<h2 class = "Login">Welcome! Please Fill out the following information to resigter</h2>
 <form name = "credentials" class = "Login" action = "registerUser.php" method = "post" >
 		<p>
 			<label for="UserName">Username:</label>

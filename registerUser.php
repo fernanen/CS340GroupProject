@@ -1,11 +1,7 @@
-<!DOCTYPE html> 
-<!--Insert Into HW1 Users Table CS 340--> 
-<html> 
-	<head>
-		<title>Register</title>
-	</head> 
-<body> 
-<a href = ./mainPage.php> home </a> 
+<?php
+session_start();
+?>
+<?php include("./header.php");?>
 <?php
 	// Get login Credentials Using this file 
 	include 'connectCredentials.php';

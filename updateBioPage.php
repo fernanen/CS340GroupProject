@@ -1,15 +1,7 @@
 <?php
 	session_start();
  ?>
-<!DOCTYPE html>
-<!-- Get new User Info-->
-<html>
-	<head>
-		<title>Register</title>
-					<link rel="stylesheet" type="text/css" href="myStyle.css">
-	</head>
-<body class = "Update">
-<a href = ./mainPage.php>Home</a>
+<?php include("./header.php");?>
 <h2 class = "Update">Write your update user bio below:</h2>
 <form name = "updateContent" class = "Bio" action = "updateBio.php" method = "post" >
 		<p>

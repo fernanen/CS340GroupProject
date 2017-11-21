@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-	<head>
-			<title>Login</title>
-			<link rel="stylesheet" type="text/css" href="myStyle.css">
-	</head>
-<body class = "Login">
-<a href = ./mainPage.php> home</a>
+<?php
+session_start();
+?>
+<?php include("./header.php");?>
 	<h1> Our Logo Goes here </h1>
 	<h2 class = "Login">Login</h1>
 		<form name = "login" class = "Login" method = "post" action = "connect.php">
