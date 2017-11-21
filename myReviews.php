@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html> 
 <!--Insert Into HW1 Users Table CS 340--> 
 <html> 
@@ -5,10 +8,7 @@
 		<title>Register</title>
 		<link rel="stylesheet" type="text/css" href="myStyle.css">
 	</head> 
-<body> 
-	<h2> WELCOME TO OUR HOME PAGE </h2>
-	<p> This is going to be our main page for the project. as of now we have registration, login, and list users available </p>
-	<!-- this is the first navigation bar -->
+<body>
 	<div class = "navbar"> 
 		<a href = ./mainPage.php > Home </a>
 		<div class = "dropdown">
@@ -22,7 +22,5 @@
 		</div>
 		<a href = ./about.php> About </a> 
 	</div>
-	<!----> 
-	
-</body>
+</body> 
 </html> 

@@ -102,3 +102,13 @@ li a:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+img.stretchImage{
+    width:160px;
+    height:200px; 
+
+}
+img.clipImage {
+    width:160px;
+    height:auto;
+}
