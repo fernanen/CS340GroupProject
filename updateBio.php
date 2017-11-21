@@ -31,11 +31,10 @@
 
 	//attempt update query
     print_r($_SESSION);
-	$query = "UPDATE Users
-            SET bio = '$bio'
-            WHERE username = '$_SESSION["userName"]'";
+	$uname = $_SESSION["userName"];
+	$query = "UPDATE Users SET bio = '$bio' WHERE username = '$uname'";
 
-//    $query = "UPDATE Users SET bio = '$bio' WHERE username = '$UserName'";
+	//$query = "UPDATE Users SET bio = '$bio' WHERE username = '$UserName'";
 	//check if query was successful
     if(mysqli_query($connected, $query))
 	{
