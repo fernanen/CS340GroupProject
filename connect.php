@@ -75,8 +75,8 @@ session_start();
 				$_SESSION["lastName"]= $row[3];
 				$_SESSION["age"]= $row[4]; 
 				$_SESSION["bio"]= $row[5]; 
-				echo "successfully logged in!";
-				print_r($_SESSION);
+				echo "Successfully logged in!";
+				// print_r($_SESSION);
 				echo "<br>";
 			}
 			else
