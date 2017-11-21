@@ -18,7 +18,7 @@ session_start();
 			<div class = "dropdown-content">
 				<a href = ./myAccount.php>My Profile</a>
 				<a href = ./myReviews.php>My Reviews</a>
-				<a href = ./updateBioPage.php> my Bio </a>
+				<a href = ./updateBioPage.php>Update Bio </a>
 			</div>
 		</div>
 		<a href = ./about.php> About </a> 
@@ -28,8 +28,8 @@ session_start();
 		echo "<h2>First Name:".$_SESSION["firstName"]."</h2>";
 		echo "<h2>Last Name:".$_SESSION["lastName"]."</h2>";
 		echo "<h2>Age:".$_SESSION["age"]."</h2>";
-		echo "<h2>Bio:fw".$_SESSION["bio"]."</h2>";
-		print_r($_SESSION);
+		echo "<h2>Bio:".$_SESSION["bio"]."</h2>";
+		// print_r($_SESSION);
 		echo "<a> Update personal information </a>";
 ?>
 </body> 
