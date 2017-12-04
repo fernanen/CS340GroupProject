@@ -50,7 +50,7 @@
 			}
 					
 			echo "	<div class = \"artwrapper\"><img class = \"boxart\" src = \"$row[6]\"></div><br>
-					<a href=./game.php?ID=" . $row[0] . ">$row[1]</a>";
+					<br><a href=./game.php?ID=" . $row[0] . ">$row[1]</a>";
 			
 			echo "</li>";
 			
