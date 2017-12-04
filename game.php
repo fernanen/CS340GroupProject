@@ -46,9 +46,9 @@
 	// 			echo "<br>";
 	// }
 	echo "<br>";
-	$queryUserR = "SELECT username, reviewContent, score, datePosted FROM UserReview WHERE gameID = $userinput";
-	$resultUR = mysqli_query($conn, $queryUserR);
-	$rowUR = mysqli_fetch_row($resultUR);
+	// $queryUserR = "SELECT username, reviewContent, score, datePosted FROM UserReview WHERE gameID = $userinput";
+	// $resultUR = mysqli_query($conn, $queryUserR);
+	// $rowUR = mysqli_fetch_row($resultUR);
 	// while($rowUR = mysqli_fetch_row($resultUR))
 	// {
 	// 			foreach($rowUR as $cell)
@@ -56,9 +56,9 @@
 	// 			echo "<br>";
 	// }
 	echo "<br>";
-	$queryCriticR = "SELECT url, websiteName, authorName, score, reviewContent, datePosted FROM CriticReview WHERE gameID = $userinput";
-	$resultCR = mysqli_query($conn, $queryCriticR);
-	$rowCR = mysqli_fetch_row($resultCR);
+	// $queryCriticR = "SELECT url, websiteName, authorName, score, reviewContent, datePosted FROM CriticReview WHERE gameID = $userinput";
+	// $resultCR = mysqli_query($conn, $queryCriticR);
+	// $rowCR = mysqli_fetch_row($resultCR);
 	// while($rowCR = mysqli_fetch_row($resultCR))
 	// {
 	// 			foreach($rowCR as $cell)
@@ -92,15 +92,76 @@
 	echo "$rowG[0]";
 	echo "<br>";
 // Genres
-	echo "Genres:";
+	echo "Genres: ";
+	$queryGenre2 = "SELECT genre FROM Genre WHERE gameID = $userinput";
+	$resultGe2 = mysqli_query($conn, $queryGenre2);
+	while($rowGe2 = mysqli_fetch_row($resultGe2))
+	{
+				foreach($rowGe2 as $cell)
+						echo "<td>$cell</td>";
+				echo ", ";
+	}
+	echo "<br>";
+//esrb
+	echo "ESRB: $rowG[1]";
+	echo "<br>";
+//Consoles and release dates
+	echo "Consoles - ";
+	echo "<br>";
+	$queryConsole = "SELECT console, releaseDate FROM Consoles WHERE gameID = $userinput";
+	$resultC = mysqli_query($conn, $queryConsole);
 	while($rowC = mysqli_fetch_row($resultC))
 	{
 				foreach($rowC as $cell)
 						echo "<td>$cell </td>";
 				echo "<br>";
 	}
-
-
+//description
+	echo "$rowG[2]";
+	echo "<br>";
+//Avg User Score
+	echo "Average User Score: $rowG[4]";
+	echo "<br>";
+//Avg Critic Score
+	echo "Average Critic Score: $rowG[3]";
+	echo "<br>";
+//Critic reviews
+	$queryCriticR = "SELECT url, websiteName, authorName, score, reviewContent, datePosted FROM CriticReview WHERE gameID = $userinput";
+	$resultCR = mysqli_query($conn, $queryCriticR);
+	$rowCR = mysqli_fetch_row($resultCR);
+	$fieldNumCR = mysqli_num_fields($resultCR);
+	echo"<h1> $table </h1>";
+	echo"<table id='t01' border = '1'><tr>";
+	//printing table headers
+	for($x=0; $x < $fieldNum; $x++)
+	{
+		$fieldCR = mysqli_fetch_field($resultCR);
+		echo "<td><b>$fieldCR->name</b></td>";
+	}
+	while($rowCR = mysqli_fetch_row($resultCR))
+	{
+				echo "<td> </td>";
+				echo "<br>";
+	}
+//User Reviews
+	$queryUserR = "SELECT username, reviewContent, score, datePosted FROM UserReview WHERE gameID = $userinput";
+	$resultUR = mysqli_query($conn, $queryUserR);
+	$rowUR = mysqli_fetch_row($resultUR);
+	$fieldNumUR = mysqli_num_fields($resultUR);
+	echo"<h1> $table </h1>";
+	echo"<table id='t01' border = '1'><tr>";
+	//printing table headers
+	for($x=0; $x < $fieldNumUR; $x++)
+	{
+		$fieldUR = mysqli_fetch_field($resultUR);
+		echo "<td><b>$fieldUR->name</b></td>";
+	}
+	while($rowUR = mysqli_fetch_row($resultUR))
+	{
+				foreach($rowUR as $cell)
+						echo "<td>$cell </td>";
+				echo "<br>";
+	}
 ?>
 
 </form>
