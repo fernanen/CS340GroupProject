@@ -38,20 +38,9 @@
 			{
 				if(!$_SESSION["userName"])
 					$_SESSION["userName"]='';
-				if(!$_SESSION["firstName"])
-					$_SESSION["firstName"]='';
-				if(!$_SESSION["lastName"])
-					$_SESSION["lastName"]='';
-				if(!$_SESSION["age"])
-					$_SESSION["age"]=0;
-				if(!$_SESSION["bio"])
-					$_SESSION["bio"]='';
 
 				$_SESSION["userName"]= $row[0];
-				$_SESSION["firstName"]= $row[2];
-				$_SESSION["lastName"]= $row[3];
-				$_SESSION["age"]= $row[4];
-				$_SESSION["bio"]= $row[5];
+
 				echo "Successfully logged in!";
 				//print_r($_SESSION);
 				echo "<br>";
