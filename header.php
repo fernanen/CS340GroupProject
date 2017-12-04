@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html> 
 <!--Insert Into HW1 Users Table CS 340--> 
 <html> 
