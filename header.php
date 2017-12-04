@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="myStyle.css">
 	</head>
 <body>
-	<h2 class = "main">Game Review Website</h2>
+	<h2 class = "main"><a href = ./mainPage.php>Game Review Website</a></h2>
 	<!-- this is the first navigation bar -->
 	<div class = "navbar">
 		<li class="floatleft"><a href = ./mainPage.php > Home </a></li>
