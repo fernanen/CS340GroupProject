@@ -10,7 +10,7 @@
 	}
 
 	$userinput = mysqli_real_escape_string($conn, $_GET['ID']);
-	$query = "SELECT gameName FROM Games WHERE gameID = $userinput";
+	$query = "SELECT gameName FROM Games WHERE gameID = '$userinput'";
 	$result = mysqli_query($conn, $query);
 	$row = mysqli_fetch_row($result);
 
@@ -87,7 +87,7 @@
 	//$rowCR[5] = datePosted
 
 //boxArt --	DOESNT WORK
-	echo "<div class = \"artwrapper\"><img class = \"boxart\" src = \"$row[5]\"></div>";
+	echo "<div class = \"artwrapper\"><img class = \"boxart\" src = \"$rowG[5]\"></div>";
 // Game Name
 	echo "$rowG[0]";
 	echo "<br>";
@@ -140,8 +140,11 @@
 	}
 	while($rowCR = mysqli_fetch_row($resultCR))
 	{
-				echo "<td> </td>";
-				echo "<br>";
+		echo "<tr>";
+		foreach($rowCR as $cell)
+				echo "<td>$cell </td>";
+		echo "<br>";
+		echo "</tr>";
 	}
 //User Reviews
 	$queryUserR = "SELECT username, reviewContent, score, datePosted FROM UserReview WHERE gameID = $userinput";
@@ -158,9 +161,11 @@
 	}
 	while($rowUR = mysqli_fetch_row($resultUR))
 	{
+				echo "<tr>";
 				foreach($rowUR as $cell)
 						echo "<td>$cell </td>";
 				echo "<br>";
+				echo "</tr>";
 	}
 ?>
 
