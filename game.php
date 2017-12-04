@@ -1,4 +1,5 @@
-<?php include("./header.php");?>
+<?php include("./header.php");
+session_start();?>
 <body>
 <?php
 
@@ -19,72 +20,7 @@
 	$queryGame = "SELECT gameName, esrb, description, overallCriticScore, overallUserScore, imageURL FROM Games WHERE gameID = $userinput";
 	$resultG = mysqli_query($conn, $queryGame);
 	$rowG = mysqli_fetch_row($resultG);
-	// while($rowG = mysqli_fetch_row($resultG))
-	// {
-	// 			foreach($rowG as $cell)
-	// 					echo "<td>$cell </td>";
-	// 			echo "<br>";
-	// }
-	echo "<br>";
-	$queryConsole = "SELECT console, releaseDate FROM Consoles WHERE gameID = $userinput";
-	$resultC = mysqli_query($conn, $queryConsole);
-	$rowC = mysqli_fetch_row($resultC);
-	// while($rowC = mysqli_fetch_row($resultC))
-	// {
-	// 			foreach($rowC as $cell)
-	// 					echo "<td>$cell </td>";
-	// 			echo "<br>";
-	// }
-	echo "<br>";
-	$queryGenre = "SELECT genre FROM Genre WHERE gameID = $userinput";
-	$resultGe = mysqli_query($conn, $queryGenre);
-	$rowGe = mysqli_fetch_row($resultGe);
-	// while($rowGe = mysqli_fetch_row($resultGe))
-	// {
-	// 			foreach($rowGe as $cell)
-	// 					echo "<td>$cell </td>";
-	// 			echo "<br>";
-	// }
-	echo "<br>";
-	// $queryUserR = "SELECT username, reviewContent, score, datePosted FROM UserReview WHERE gameID = $userinput";
-	// $resultUR = mysqli_query($conn, $queryUserR);
-	// $rowUR = mysqli_fetch_row($resultUR);
-	// while($rowUR = mysqli_fetch_row($resultUR))
-	// {
-	// 			foreach($rowUR as $cell)
-	// 					echo "<td>$cell </td>";
-	// 			echo "<br>";
-	// }
-	echo "<br>";
-	// $queryCriticR = "SELECT url, websiteName, authorName, score, reviewContent, datePosted FROM CriticReview WHERE gameID = $userinput";
-	// $resultCR = mysqli_query($conn, $queryCriticR);
-	// $rowCR = mysqli_fetch_row($resultCR);
-	// while($rowCR = mysqli_fetch_row($resultCR))
-	// {
-	// 			foreach($rowCR as $cell)
-	// 					echo "<td>$cell </td>";
-	// 			echo "<br>";
-	// }
 
-	//$rowG[0] = gameName
-	//$rowG[1] = esrb
-	//$rowG[2] = description
-	//$rowG[3] = overallCriticScore
-	//$rowG[4] = overallUserScore
-	//$rowG[5] = imageURL
-	//$rowC[0] = console
-	//$rowC[1] = releaseDate
-	//$rowGe[0] = genre
-	//$rowUR[0] = userName
-	//$rowUR[1] = reviewContent
-	//$rowUR[2] = score
-	//$rowUR[3] = datePosted
-	//$rowCR[0] = url
-	//$rowCR[1] = websiteName
-	//$rowCR[2] = authorName
-	//$rowCR[3] = score
-	//$rowCR[4] = reviewContent
-	//$rowCR[5] = datePosted
 
 //boxArt --	DOESNT WORK
 	echo "<div class = \"artwrapper\"><img class = \"boxart\" src = \"$rowG[5]\"></div>";
@@ -133,7 +69,7 @@
 	echo"<h1> $table </h1>";
 	echo"<table id='t01' border = '1'><tr>";
 	//printing table headers
-	for($x=0; $x < $fieldNum; $x++)
+	for($x=0; $x < $fieldNumCR; $x++)
 	{
 		$fieldCR = mysqli_fetch_field($resultCR);
 		echo "<td><b>$fieldCR->name</b></td>";
@@ -166,6 +102,23 @@
 						echo "<td>$cell </td>";
 				echo "<br>";
 				echo "</tr>";
+	}
+
+	if($_SESSION["userName"] != ""){
+		echo "Write/Update a Review!";
+		echo "<br>";
+		echo "	<form name = \"credentials\" class = \"Login\" action = \"postReview.php\" method = \"post\" >
+	<p>
+					<label for=\"Review\">Review:<label>
+					<input type=\"text\" name = \"Review\" id = \"Review\">
+				</p>
+				<p>
+					<label for=\"Score\">Score:<label>
+					<input type=\"number\" name = \"Score\" id = \"Score\" placeHolder = \"0 - 100\">
+				</p>
+				<input type =\"hidden\" name = \"gameID\" id = \"gameID\" value = \"$userinput\">
+			<input type = \"submit\" value = \"Submit\">
+			</form>";
 	}
 ?>
 

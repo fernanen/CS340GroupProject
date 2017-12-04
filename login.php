@@ -1,6 +1,5 @@
 <?php include("./header.php");?>
-	<h1> Our Logo Goes here </h1>
-	<h2 class = "Login">Login</h1>
+	<center><h2 class = "Login">Login</h1></center>
 		<form name = "login" class = "Login" method = "post" action = "connect.php">
 			<p>
 				<label for="UserName" >Username:</label>
