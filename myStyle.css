@@ -20,6 +20,10 @@ h2.main a{
 	color: white;
 }
 
+h2.Update{
+	margin-top: -10px;
+}
+
 div.mainwrapper {
 	background: #d8c591;
 	height: 100%
@@ -29,7 +33,7 @@ div.textwrapper{
 	background: #f9e6b1;
 	width: 92%;
 	margin: 20px 0px 20px 0px;
-	padding: 20px 0px 20px 0px;
+	padding: 20px 10px 20px 10px;
 	display: inline-block;
 	text-align: left;
 }
@@ -38,9 +42,8 @@ div.outwrapper{
 	text-align: center;
 }
 
-li.profile{
-	font-size: 20px;
-	list-style-type: none;
+.profile{
+	font-size: 25px;
 }
 
 .gamewrapper{

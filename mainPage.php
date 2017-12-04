@@ -37,7 +37,7 @@
 				echo "<div class = \"badscore score critic\">Critic<br>$row[4]</div>";
 			}
 			
-			if($row[5] > 70){
+			if($row[4] > 70){
 				echo "<div class = \"goodscore score user\">User<br>$row[5]</div>";
 			}
 			
