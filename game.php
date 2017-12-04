@@ -9,7 +9,7 @@
 		die('Could not connect: ' . mysql_error());
 	}
 	
-	$userinput = mysqli_real_escape_string($conn, $_POST['gameID']);
+	$userinput = mysqli_real_escape_string($conn, $_GET['ID']);
 	$query = "SELECT gameName FROM Games WHERE gameID = $userinput";
 	$result = mysqli_query($conn, $query);
 	$row = mysqli_fetch_row($result);

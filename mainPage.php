@@ -23,7 +23,9 @@
 		
 		while($row = mysqli_fetch_row($result))
 		{
-			echo "<li class = \"gamewrapper\"><img class = \"boxart\" src = \"$row[6]\"><br>$row[1]</li>";
+			echo 	"<li class = \"gamewrapper\">
+					<div class = \"artwrapper\"><img class = \"boxart\" src = \"$row[6]\"></div><br>
+					<a href=./game.php?ID=" . $row[0] . ">$row[1]</a></li>";
 		}
 		
 		echo "</div>";
