@@ -5,12 +5,12 @@
 			<p>
 				<label for="UserName" >Username:</label>
 				<input type="text" name="UserName" id = "UserName">
-			</p> 
+			</p>
 			<p>
 				<label for="Password">Password:</label>
 				<input type="text" name="Password" id = "Password">
-			</p> 
-			<input type="submit" value = "submit">
+			</p>
+			<input type="submit" value = "Submit">
 		</form>
 </body>
 </html>

@@ -5,7 +5,7 @@
 			<label for="Bio">Bio:<label>
 			<input type="text" name = "bio" id = "bio" placeHolder = "New Bio">
 		</p>
-	<input type = "submit" value = "submit">
+	<input type = "submit" value = "Submit">
 </form>
 </body>
 </html>
