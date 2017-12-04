@@ -34,6 +34,6 @@
 				echo "<li class=\"floatright\"><a href = ./login.php> Log In </a></li>";
 				echo "<li class=\"floatright\"><a href = ./newUserForm.php> Sign Up </a></li>";
 			}
-			echo "<li class=\"floatright searchbar\"> <form method = \"get\" action = \"searchPage.php\"> <input type = \"text\"> <input type=\"submit\" value=\"Search\"> </form> </li>";
+			echo "<li class=\"floatright searchbar\"> <form method = \"post\" action = \"searchPage.php\"> <input type = \"text\" name = \"search\" id = \"search\"> <input type=\"submit\" value=\"Search\"> </form> </li>";
 		?>
 </div>
