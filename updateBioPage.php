@@ -1,6 +1,3 @@
-<?php
-	session_start();
- ?>
 <?php include("./header.php");?>
 <h2 class = "Update">Write your update user bio below:</h2>
 <form name = "updateContent" class = "Bio" action = "updateBio.php" method = "post" >

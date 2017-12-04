@@ -1,6 +1,4 @@
-<?php
-    session_start();
- ?>
+
 <?php include("./header.php");?>
 <?php
 	// Get login Credentials Using this file

@@ -1,8 +1,6 @@
-<?php session_start(); ?>
 <?php include("./header.php");?>
-	
 	<div class="mainwrapper">
-	
+
 	<?php
 		include 'connectCredentials.php';
 
@@ -31,8 +29,6 @@
 		echo "</div>";
 	
 	?>
-	
-	
 	</div>
 	<!----> 
 </body>
