@@ -22,7 +22,7 @@
 			$row = $query->fetch_row();
 			
 			echo 	"<div class =\"outwrapper\"><div class=\"textwrapper\">
-					<a style=\"font-size:32px;\"><b>My Profile</b></a><br><br>
+					<a style=\"font-size:32px;\"><b>" . $row[0] . "'s Profile</b></a><br><br>
 					<table class = \"profile\">
 					<tr>
 						<td><b>Username:</b></td>
@@ -40,7 +40,8 @@
 						<td><b>Bio:</b></td>
 						<td>$row[5]</td>
 					</tr>
-					</table></div></div>";
+					</table>
+					<p><a href = ./userReviews.php?userName=" . $userinput . " style=\"font-size:20px\">View this user's reviews</p></div></div>";
 		}
 		else{
 			echo "You are not logged in!";

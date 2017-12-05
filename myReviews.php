@@ -19,7 +19,8 @@
 
 		// get number of columns in the table
 		$fieldNum = mysqli_num_fields($result);
-		echo"<div class =\"outwrapper\"><div class=\"textwrapper\">";
+		echo"<div class =\"outwrapper\"><div class=\"textwrapper\">
+		<a style=\"font-size:32px;\"><b>My Reviews</b></a><br><br>";
 		
 		echo"<table><tr>";
 		//printing table headers
@@ -35,18 +36,27 @@
 					<tr>
 						<td><b>Review:</b></td>
 						<td>$row[1]</td>
-					</tr>
-					</table>";
-			echo	"<tr>
-						<td><b>Score:</b></td>
-						<td class = \"rawscore\">$row[2]</td>
 					</tr>";
+			echo	"<tr>
+						<td><b>Score:</b></td>";
+						
+			if($row[2] > 70){
+				echo "<td><div class = \"rawscore goodscore\">$row[2]</div></td>";
+			}
+			elseif($row[2] > 50){
+				echo "<td><div class = \"rawscore mixedscore\">$row[2]</div></td>";
+			}
+			else{
+				echo "<td><div class = \"rawscore badscore\">$row[2]</div></td>";
+			}
+			
+			echo	"</tr>";
 			echo	"<tr>
 						<td><b>Date:</b></td>
 						<td>$row[3]</td>
 					</tr>
 					</table>
-					<br>";
+					<br><br>";
 			}
 		mysqli_free_result($result);
 		mysqli_close($conn);

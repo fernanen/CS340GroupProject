@@ -47,6 +47,7 @@ div.outwrapper{
 }
 
 .gamewrapper{
+	float:left;
 	background: #f9e6b1;
 	height: 220px;
 	width: 400px;
@@ -62,6 +63,18 @@ div.outwrapper{
 	height: 200px;
 	margin: 10px;
 	float: left;
+}
+
+.reviewwrapper{
+	background: #fdf4da;
+	display: inline-block;
+	float: left;
+	width: 45%;
+}
+
+.divider{
+	background: #f9e6b1;
+	width:100%;
 }
 
 .boxart{
@@ -97,10 +110,6 @@ input {
 body.Login {
     background-image: url("./images/loginWallPaper6.png");
 
-}
-
-li {
-    float: left;
 }
 
 li.floatleft li.floatright a {
@@ -139,6 +148,17 @@ div.score{
 	line-height: 40px;
 }
 
+.plainscore{
+	font-family: impact;
+	color: white;
+	text-align: center;
+	width: 80px;
+	height: 80px;
+	font-size: 32px;
+	margin: 0px 20px 0px 20px;
+	display: inline-block;
+}
+
 div.user{
 	position: absolute;
 	right: 26px;
@@ -161,6 +181,16 @@ div.mixedscore{
 
 div.badscore{
 	background: #f00;
+}
+
+ul.reviewlist{
+	list-style-type: none;
+	padding: 20px;
+	margin: 0px;
+}
+
+.credentials{
+	text-align: left;
 }
 
 .navbar {

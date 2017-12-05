@@ -20,7 +20,7 @@
 		// get number of columns in the table
 		$fieldNum = mysqli_num_fields($result);
 		echo"<div class =\"outwrapper\"><div class=\"textwrapper\">
-		<a style=\"font-size:32px;\"><b>" . $userinput . "'s Reviews</b></a><br><br>";
+		<a href = ./userAccount.php?userName=" . $userinput . "><b style=\"font-size:32px\">" . $userinput . "'s</a> Reviews</b><br><br>";
 		
 		echo"<table><tr>";
 		//printing table headers
