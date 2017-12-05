@@ -4,7 +4,7 @@
 <form name = "updateContent" class = "Bio" action = "updateBio.php" method = "post" >
 		<p>
 			<label for="Bio"><b>Bio:</b><label>
-			<input type="text" name = "bio" id = "bio" placeHolder = "New Bio" style="width:400px;">
+			<input type="text" name = "bio" id = "bio" placeHolder = "New Bio" style="width:40%;">
 		</p>
 	<input type = "submit" value = "Submit">
 </form>
