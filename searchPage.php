@@ -9,8 +9,7 @@
 				die('Could not connect: ' . mysql_error());
 		}
 		//Retrieve table from search
-		$search = mysqli_real_escape_string($connected, $_POST['search']);
-		echo "$search"; 
+		$search = mysqli_real_escape_string($connected, $_POST['search']); 
 		$query = "SELECT * FROM Games WHERE gameName LIKE '%$search%' ORDER BY gameID";
 		$result = mysqli_query($connected,$query);
 		if(!$result)
