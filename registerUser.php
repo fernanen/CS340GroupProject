@@ -37,7 +37,8 @@
 		//check if query was successful 
         if(mysqli_query($connected, $query))
 		{
-                echo "Record added successfully.";
+                echo "<div class =\"outwrapper\"><div class=\"textwrapper\">Signed up.";
+				$_SESSION["userName"]= $UserName;
         } else
 		{
                 echo "ERROR: Could not able to execute $query. " . mysqli_error($connected);

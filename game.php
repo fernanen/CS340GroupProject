@@ -83,14 +83,23 @@ session_start();?>
 				</p>
 				<p>
 					<label for=\"Score\">Score:<label>
-					<input type=\"number\" name = \"Score\" id = \"Score\" placeHolder = \"0 - 100\">
+					<input type=\"number\" name = \"Score\" id = \"Score\" placeHolder = \"1 - 100\">
 				</p>
 				<input type =\"hidden\" name = \"gameID\" id = \"gameID\" value = \"$userinput\">
 			<input type = \"submit\" value = \"Submit\">
 			</form></p>";
 	}
+	
+//labels
+	echo"<table style=\"width:100%;text-align:center;font-size:20px;\">
+		<tr>
+			<td style=\"width:50%;\"><b>Critic Reviews</td>
+			<td style=\"width:50%;\"><b>User Reviews</td>
+		</tr>
+		</table>";
+	
 //Critic reviews
-	$queryCriticR = "SELECT url, websiteName, authorName, score, reviewContent, datePosted FROM CriticReview WHERE gameID = $userinput";
+	$queryCriticR = "SELECT url, websiteName, authorName, score, reviewContent, datePosted FROM CriticReview WHERE gameID = $userinput ORDER BY score DESC";
 	$resultCR = mysqli_query($conn, $queryCriticR);
 	echo "<div class=\"reviewwrapper\" style = \"margin:0 5% 0 2.5%;\">";
 	while($rowCR = mysqli_fetch_row($resultCR)){
@@ -116,7 +125,7 @@ session_start();?>
 	echo "</div>";
 
 //User Reviews
-	$queryUserR = "SELECT userName, reviewContent, score, datePosted FROM UserReview WHERE gameID = $userinput";
+	$queryUserR = "SELECT userName, reviewContent, score, datePosted FROM UserReview WHERE gameID = $userinput ORDER BY score DESC";
 	$resultUR = mysqli_query($conn, $queryUserR);
 	echo "<div class=\"reviewwrapper\">";
 	while($rowUR = mysqli_fetch_row($resultUR)){

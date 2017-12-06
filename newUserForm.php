@@ -13,7 +13,8 @@
 		}
 	}
 	?>
-</script>
+<div class ="outwrapper"><div class="textwrapper">
+<h2 style="margin-top:0px;font-size:32px;">Sign Up</h2>
 <form name = "credentials" class = "Login" action = "registerUser.php" method = "post" >
 		<p>
 			<label for="UserName">Username:</label>
@@ -30,7 +31,7 @@
         </p>
         <p>
             <label for="Password">Password:</label>
-            <input type="text" name="Password" id = "Password" placeHolder = "Password" required>
+            <input type="password" name="Password" id = "Password" placeHolder = "Password" required>
         </p>
 		<p>
 			<label for="Age">Age:<label>

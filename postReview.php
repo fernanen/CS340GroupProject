@@ -19,7 +19,7 @@
 	$userName = $_SESSION["userName"];
 	$userinput = mysqli_real_escape_string($connected, $_POST['gameID']);
 	$date = date('Y-m-d');
-	if(!empty($reviewContent) && !empty($score) && ($score >= 0) && ($score <= 100)){
+	if(!empty($reviewContent) && !empty($score) && ($score > 0) && ($score <= 100)){
 		$queryTodo = "SELECT userName FROM UserReview WHERE userName = '$userName' and gameID = '$userinput'";
 		$result = mysqli_query($connected,$queryTodo);
 		if(!$result)
@@ -34,7 +34,8 @@
 			//check if query was successful
 	        if(mysqli_query($connected, $query))
 			{
-	                echo "Record added successfully.";
+	                echo "<div class =\"outwrapper\"><div class=\"textwrapper\">Record added successfully.<br>
+						<a href=./game.php?ID=" . $userinput . ">Return to the previous page.</a>";
 	        } else
 			{
 	                echo "ERROR: Could not able to execute $query. " . mysqli_error($connected);
@@ -45,7 +46,8 @@
 			$query2 = "UPDATE UserReview SET reviewContent = '$reviewContent', score = '$score', datePosted = '$date' WHERE userName = '$userName' and gameID = '$userinput'";
 			if(mysqli_query($connected, $query2))
 			{
-	                echo "Record added successfully.";
+	                echo "<div class =\"outwrapper\"><div class=\"textwrapper\">Record updated successfully.<br>
+						<a href=./game.php?ID=" . $userinput . ">Return to the previous page.</a>";
 	        } else
 			{
 	                echo "ERROR: Could not able to execute $query2. " . mysqli_error($connected);
