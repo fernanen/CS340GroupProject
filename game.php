@@ -72,7 +72,7 @@ session_start();?>
 			else{
 				echo "<div class = \"badscore plainscore\">User<br>$rowG[4]</div>";
 			}
-	echo "<br>";
+	echo "<br><br>";
 	if($_SESSION["userName"] != ""){
 		echo "<p>Write/Update a Review!";
 		echo "<br>";
@@ -95,7 +95,7 @@ session_start();?>
 	echo "<div class=\"reviewwrapper\" style = \"margin:0 5% 0 2.5%;\">";
 	while($rowCR = mysqli_fetch_row($resultCR)){
 		echo 	"<ul class = \"reviewlist\">
-				<li><b>Written by $rowCR[2] for <a href = \"$rowCR[0]\">$rowCR[1]</a> - $rowCR[5]</b></li>
+				<li><b>Written by $rowCR[2] for <a href = \"$rowCR[0]\">$rowCR[1]</a> - $rowCR[5]</b></li><br>
 				<li>$rowCR[4]</li>
 				<br>
 				<li>";
@@ -121,7 +121,7 @@ session_start();?>
 	echo "<div class=\"reviewwrapper\">";
 	while($rowUR = mysqli_fetch_row($resultUR)){
 		echo 	"<ul class = \"reviewlist\">
-				<li><b>Written by <a href = ./userAccount.php?userName=" . $rowUR[0] . ">$rowUR[0]</a> - $rowUR[3]</b></li>
+				<li><b>Written by <a href = ./userAccount.php?userName=" . $rowUR[0] . ">$rowUR[0]</a> - $rowUR[3]</b></li><br>
 				<li>$rowUR[1]</li>
 				<br>
 				<li>";

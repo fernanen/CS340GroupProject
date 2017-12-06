@@ -1,5 +1,6 @@
 <?php include("./header.php");?>
-	<center><h2 class = "Login">Login</h1></center>
+	<div class ="outwrapper"><div class="textwrapper">
+	<h2 class = "Login">Login</h1>
 		<form name = "login" class = "Login" method = "post" action = "connect.php">
 			<p>
 				<label for="UserName" >Username:</label>
@@ -7,7 +8,7 @@
 			</p>
 			<p>
 				<label for="Password">Password:</label>
-				<input type="text" name="Password" id = "Password">
+				<input type="password" name="Password" id = "Password">
 			</p>
 			<input type="submit" value = "Submit">
 		</form>

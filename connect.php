@@ -41,7 +41,8 @@
 
 				$_SESSION["userName"]= $row[0];
 
-				echo "Successfully logged in!";
+				echo "<div class =\"outwrapper\"><div class=\"textwrapper\">
+				<a style=\"font-size:32px;\"><b>Logged in!</b></a>";
 				//print_r($_SESSION);
 				echo "<br>";
 			}

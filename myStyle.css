@@ -96,20 +96,14 @@ div.outwrapper{
 	line-height: 46px;
 }
 
-form.Login {
-    text-align: center;
-    
+h2.Login{
+	margin-top: 0px;
+	font-size: 32px;
 }
-form.register{
 
-}
 input {
     border-radius: 4px;
     
-}
-body.Login {
-    background-image: url("./images/loginWallPaper6.png");
-
 }
 
 li.floatleft li.floatright a {

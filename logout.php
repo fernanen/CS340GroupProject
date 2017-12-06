@@ -2,7 +2,8 @@
 	<?php
 	unset($_SESSION);
 	session_destroy();
-	echo "Logged out!"; 
+	echo "<div class =\"outwrapper\"><div class=\"textwrapper\">
+	<a style=\"font-size:32px;\"><b>Logged out!</b></a>"; 
 	?>
 	</body>
 </html>

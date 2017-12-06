@@ -7,10 +7,10 @@
 		<link rel="stylesheet" type="text/css" href="myStyle.css">
 	</head>
 <body>
-	<h2 class = "main"><a href = ./mainPage.php>Game Review Website</a></h2>
+	<h2 class = "main"><a href = ./index.php>Game Review Website</a></h2>
 	<!-- this is the first navigation bar -->
 	<div class = "navbar">
-		<li class="floatleft"><a href = ./mainPage.php > Home </a></li>
+		<li class="floatleft"><a href = ./index.php > Home </a></li>
 		<?php
 			if($_SESSION["userName"] != ""){
 				echo "<li class=\"floatleft\"><div class = \"dropdown\">
